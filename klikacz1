@@ -13,7 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>store</td>
-	<td>2200</td>
+	<td>500</td>
 	<td>maxwynik</td>
 </tr>
 <tr>
@@ -22,8 +22,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='game-quiz-holder']/div/div[2]/div/div/label[@bestAnswer=1]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>//div[@id='game-quiz-holder']/div/div[2]/div/div/label[@bestAnswer=1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=p.gq-info-result</td>
 	<td></td>
 </tr>
 <tr>
@@ -32,13 +42,28 @@
 	<td>BRAWO!</td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>//span[@class='no-points']/span[text()!='']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>storeText</td>
-	<td>css=span.no-points &gt; span</td>
+	<td>//span[@class='no-points']/span</td>
 	<td>wynik</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${wynik} &lt; ${maxwynik}</td>
+	<td></td>
 </tr>
 <tr>
 	<td>storeEval</td>
 	<td>(storedVars['wynik'] &lt; storedVars['maxwynik']) ? true : false</td>
+	<td>nie_za_duzo</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>(${wynik} &lt; ${maxwynik}) ? true : false</td>
 	<td>nie_za_duzo</td>
 </tr>
 <tr>
@@ -49,6 +74,11 @@
 <tr>
 	<td>goto</td>
 	<td>begin</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
 	<td></td>
 </tr>
 </tbody></table>
